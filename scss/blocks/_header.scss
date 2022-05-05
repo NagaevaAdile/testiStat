@@ -1,0 +1,394 @@
+.header {
+    font-family: 'Lato', sans-serif;
+
+    &__nav {
+        max-width: 1530px;
+        margin: 23px 195px 0 195px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include laptop {
+            max-width: 1500px;
+            margin: 23px 40px 0 40px;
+        }
+
+        @include tablet {
+            max-width: 690px;
+            margin: 23px 40px 0 40px;
+        }
+
+        @include mobile {
+            max-width: 330px;
+            margin: 35px 15px 40px 15px;
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+
+            &-logo {
+                display: flex;
+
+                &-stat {
+                    display: flex;
+                    align-items: center;
+
+                    .before-stat-logo {
+                        @include mobile {
+                            width: 35px;
+                            height: 32px;
+                        }
+                    }
+
+                    .stat-logo {
+                        margin: 0 19px;
+
+                        @include mobile {
+                            width: 95px;
+                            height: 17px;
+                        }
+                    }
+                }
+
+                &-line {
+                    border-right: 1px solid $black-opacity;
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                &-text {
+                    @include font(14px, 18px);
+                    color: $black;
+                    margin-left: 25px;
+                    align-self: center;
+
+                    @include laptop {
+                        @include font(10px, 13px);
+                    }
+
+                    @include mobile {
+                        display: none;
+                    }
+
+
+                }
+            }
+
+            &-list {
+                display: flex;
+
+                @include tablet {
+                    display: none;
+                }
+
+                li {
+                    @include font(24px, 35px);
+                    color: $black;
+
+                    @include laptop {
+                        @include font(18px, 35px)
+                    }
+                }
+
+                &-arrow {
+                    margin: 0 50px;
+                }
+
+                &-arrow::after {
+                    content: '';
+                    float: right;
+                    position: relative;
+                    top: 17px;
+                    left: 8px;
+                    background: url(../../img/arrow.svg) no-repeat;
+                    height: 13px;
+                    width: 12px;
+                }
+
+                a {
+                    color: $black;
+                }
+
+                a:hover {
+                    color: $pink;
+                }
+
+            }
+        }
+
+        &-contact {
+            display: flex;
+            align-items: center;
+
+            &-burger {
+                display: none;
+
+                @include laptop {
+                    display: block;
+                    margin-left: 50px;
+                }
+
+                @include tablet {
+                    display: block;
+                }
+
+                @include tablet {
+                    display: block;
+                    margin-left: 20px;
+                }
+            }
+
+            p {
+                @include font(24px, 35px);
+                color: $black;
+
+                @include laptop {
+                    @include font(18px, 35px)
+                }
+
+                @include tablet {
+                    display: none;
+                }
+            }
+
+            p::before {
+                content: '';
+                float: left;
+                position: relative;
+                top: 8px;
+                right: 8px;
+                background: url(../../img/phone.svg) no-repeat;
+                height: 19px;
+                width: 20px;
+            }
+
+            button {
+                @include font(23px, 35px);
+                margin-left: 160px;
+                background: $pink;
+                color: $white;
+                border-radius: 12px;
+                width: 169px;
+                height: 45px;
+
+                @include laptop {
+                    margin-left: 60px;
+                }
+
+                @include mobile {
+                    width: 103px;
+                    height: 35px;
+                    margin-left: 0;
+                    @include font(14px, 27px);
+                }
+            }
+
+            button:hover {
+                background: $white;
+                color: $pink;
+                border: 0.5px solid $pink;
+                transition: all .5s ease;
+            }
+
+            button::before {
+                content: '';
+                float: left;
+                position: relative;
+                top: 6px;
+                left: 18px;
+                background: url(../../img/arrow-btn.svg) no-repeat;
+                height: 23px;
+                width: 23px;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        margin: 77px 195px 20px 195px;
+        display: flex;
+
+
+        @include tablet {
+            margin: 60px 20px 147px 20px;
+        }
+
+        li+li::before {
+            content: '—';
+            padding: 0 8px;
+            color: $black-opacity;
+        }
+
+        a {
+            color: $black-opacity;
+        }
+
+        a:hover {
+            color: $pink;
+        }
+
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        margin: 33px 195px 147px 195px;
+
+        @include tablet {
+            margin: 33px 20px 147px 20px;
+        }
+
+        &-text {
+            div {
+                width: 85%;
+
+                width: 100%;
+            }
+        }
+
+        h1 {
+            @include font(56px, 80px, 700);
+
+            span {
+                color: $pink;
+            }
+
+            @include laptop {
+                @include font(46px, 65px, 700)
+            }
+
+            @include mobile {
+                @include font(26px, 39px, 700)
+            }
+        }
+
+        &-price {
+            @include font(35px, 30px);
+            color: $black-opacity;
+            margin: 22px 0 22px 35px;
+
+            span {
+                color: $pink;
+            }
+
+            @include laptop {
+                @include font(35px, 30px, 700);
+                margin: 42px 0 40px 35px;
+            }
+        }
+
+        &-price::before {
+            content: '';
+            float: left;
+            position: relative;
+            top: -11px;
+            right: 32px;
+            background: url(../../img/spent.svg) no-repeat;
+            height: 48px;
+            width: 48px;
+        }
+
+        p {
+            @include font(25px, 40px);
+            padding-top: 16px;
+            color: $black-opacity;
+
+            @include laptop {
+                @include font(20px, 32px);
+            }
+        }
+
+        &-img {
+            position: relative;
+            width: 35%;
+            height: 35%;
+
+            img {
+                position: absolute;
+                right: -75px;
+                width: 620px;
+                height: 610px;
+
+                @include laptop {
+                    top: 75px;
+                    left: 0;
+                    width: 435px;
+                    height: 435px;
+                }
+
+                @include tablet {
+                    width: 410px;
+                    height: 410px;
+                    left: -140px;
+                }
+
+                @include mobile {
+                    display: none;
+                    // width: 245px;
+                    // height: 245px;
+                    // left: 30px;
+                    // top: -22px;
+                }
+            }
+        }
+
+        &-img::before {
+            content: '';
+            float: left;
+            position: relative;
+            top: 95px;
+            background: url(../../img/sup-starts.svg) no-repeat;
+            height: 620px;
+            width: 620px;
+
+            @include laptop {
+                left: 0;
+                top: 150px;
+                width: 458px;
+                height: 435px;
+            }
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}
+
+.header::before {
+    content: '';
+    float: left;
+    top: -23px;
+    position: absolute;
+    background-image: url(../../img/header-left.webp);
+    width: 101px;
+    height: 584px;
+
+    @include laptop {
+        left: -65px;
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.header::after {
+    content: '';
+    float: right;
+    bottom: 593px;
+    position: relative;
+    background-image: url(../../img/header-right.webp);
+    width: 42px;
+    height: 563px;
+
+    @include laptop {
+        display: none;
+    }
+}
